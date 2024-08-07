@@ -18,5 +18,5 @@ In watsonx asssitant, we can create a specific action step that will display the
 An example is that we can have a condition that if body.answer contains 'Lead Architect', a specific step is ran succesfully, and body.passages is defined, then we can have the assistant reply with the corresponding link from the LLM response.
 ![](./assets/assistant_action_source_attribution.png)
 
-Toggle to the JSON view to ensure the accessing the URL information is correct. In this case, it is ${step_519_result_1.body.passages[0].url}.
+Toggle to the JSON view to ensure the accessing the URL information is correct. In this case, it is `${step_519_result_1.body.passages[0].url}`.
 ![](./assets/assistant_response_json.png)
