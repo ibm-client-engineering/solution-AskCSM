@@ -42,17 +42,54 @@ First make sure you have a project created within watsonx.ai.
 
 ## Configuration & Tuning
 Please see below for recommended settings:
-- Knowledge Base Tuning:
+- Knowledgebase Connection:
+    - Curation Data Field: text
+    - Link Field: url
+    - Document Name Field: extracted_metadata.title
+    - Attribute sources inside LLM Conext by Document Name: Enabled
+    - Return the full document instead of passages (only enable this if all of your documents are short): Enabled
 
+- Knowledge Base Tuning:
+    - Document Score Range: 0.8
+    - Max Documents Per Seek: 1
+    - Document Data Penalty: 0
+    - Snippet Size: 1000
+    - KnowledgeBase Query Cache (minutes): 0
+
+- Prompt Engineering
+    - Weight Tuning Section
+        - Temperature: 0
+        - Top Probability: 0.7
+        - Frequency Penalty: -0.3
+        - Maximum Tokens: 0
 
 - Answer Engineering & Preferences
-
+    - For "How verbose should an answer be", select second tier using the slider.
 
 - Intent Matching & Cache Configuration
-
+    - Edited answer cache: 3
+    - Normal answer cache: 5
+    - Required Cache to Follow Context? Yes
+    - Required Cache to match the exact KB for the question and not the intent? No
 
 - Governance & Guardrails
-
+    - For the Semantic Score section, please turn on the following using the toggle:
+        - Enable the Semantic Score Model
+        - Use Semantic Score as the basis for Warning & Minimum confidence. Do NOT Enable for usecases requiring language translation. 
+        - Rerank the search results based on the Semantic Match
+    - Semantic Tuning  
+        - Missing key search term penalty: 0.4
+        - Missing search term penalty: 0.25
+        - Source jump penalty: 6
+        - Total coverage weight: 0.25
+        - Rerank min coverage %: 0.25
+    - Warning confidence
+        - Confidence % for warning: 5
+    - Minimum Confidence 
+        - Minimum Confidence %: 0
+        - Minimum Confidence % to display a URL: 5
+        - Minimum Text: 0
+        - Maximum Length: 100
 
 ## Testing
 -  Navigate to "Seek" tab. Test NeuralSeek with questions that are relevant to your documents, e.g. "What products or services do you offer?" You will be able to see the NeuralSeek answer with response details, metrics, and source.
