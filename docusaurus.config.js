@@ -14,7 +14,7 @@ async function createconfig() {
       mermaid: true,
     },
     themes: ["@docusaurus/theme-mermaid", "@docusaurus/theme-live-codeblock"],
-    title: "AskCSM",
+    title: "Enterprise License Agreements AI Assistant",
     tagline: "Build Faster. Together.",
     favicon: "img/favicon.ico",
 
@@ -130,7 +130,7 @@ async function createconfig() {
           },
         },
         navbar: {
-          title: "| AskCSM",
+          title: "| Enterprise License Agreements AI Assistant",
           logo: {
             alt: "IBM Client Engineering Logo",
             src: "img/logo.svg",
